@@ -1,23 +1,28 @@
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
+import 'package:cahayaa_teknik/src/features/authentication/controllers/splash_screen_controller.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/splash_screen.dart';
 import 'package:cahayaa_teknik/src/utils/themes/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final splashScreenC = Get.lazyPut(() => SplashScreenController());
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const FirstPage(),
+      home: SplashScreen(),
     );
   }
 }

@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^4.0.5
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -24,3 +25,5 @@ flutter:
   assets:
     - assets/images/splash-light.png
     - assets/images/splash-dark.png
+    - assets/images/Ellipse 2.png
+    - assets/images/Ellipse 1.png
