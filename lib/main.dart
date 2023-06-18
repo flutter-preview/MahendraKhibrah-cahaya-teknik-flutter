@@ -67,7 +67,7 @@ class FirstPage extends StatelessWidget {
               style: Theme.of(context).textTheme.titleSmall,
             ),
             Image.asset(splashLight),
-            Image.asset(splashDark),
+            Image.asset(splashLight),
           ],
         ),
       ),

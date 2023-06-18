@@ -27,3 +27,4 @@ flutter:
   assets:
     - assets/images/splash_screen/
     - assets/images/on_boarding/
+    - assets/images/welcome_screen/
