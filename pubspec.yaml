@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   google_fonts: ^4.0.5
   get: ^4.6.5
+  liquid_swipe: ^3.1.0
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -23,7 +25,5 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/splash-light.png
-    - assets/images/splash-dark.png
-    - assets/images/Ellipse 2.png
-    - assets/images/Ellipse 1.png
+    - assets/images/splash_screen/
+    - assets/images/on_boarding/

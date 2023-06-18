@@ -1,4 +1,5 @@
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
+import 'package:cahayaa_teknik/src/features/authentication/controllers/on_boarding_screen_controller.dart';
 import 'package:cahayaa_teknik/src/features/authentication/controllers/splash_screen_controller.dart';
 import 'package:cahayaa_teknik/src/features/authentication/views/splash_screen.dart';
 import 'package:cahayaa_teknik/src/utils/themes/theme.dart';
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
 
   final splashScreenC = Get.lazyPut(() => SplashScreenController());
+  final onBoardingScreenC = Get.lazyPut(() => OnBoardingScreenController());
 
   // This widget is the root of your application.
   @override
