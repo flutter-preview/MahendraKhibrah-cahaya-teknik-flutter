@@ -1,5 +1,7 @@
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -36,7 +38,9 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(const LoginScreen());
+                      },
                       child: Text(
                         "LOGIN",
                         style: Theme.of(context).textTheme.titleMedium,

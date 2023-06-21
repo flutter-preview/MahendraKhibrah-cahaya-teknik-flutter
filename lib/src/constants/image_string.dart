@@ -11,3 +11,6 @@ const String onBoarding3 = "assets/images/on_boarding/onBoarding-03.png";
 
 // welcome screen
 const String welcomeImage = "assets/images/welcome_screen/welcome.png";
+
+// logo
+const String googleLogo = "assets/logo/google.png";

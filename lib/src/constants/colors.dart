@@ -17,3 +17,6 @@ const obTangerine = Color(0xFFFFBB1C);
 const obWhite = Color(0xFFFFFFFF);
 const obBlue = Color(0xFF27A7F9);
 const obDark = Color(0xFF262626);
+
+// ----- LINK TEXT BUTTON ------
+const ltbBlue = Color(0xFF006EEF);
