@@ -12,7 +12,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({super.key});
 
-  OnBoardingScreenController onBoardingScreenC = Get.find();
+  final OnBoardingScreenController onBoardingScreenC = Get.find();
 
   @override
   Widget build(BuildContext context) {

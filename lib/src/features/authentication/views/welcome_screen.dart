@@ -1,5 +1,6 @@
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
 import 'package:cahayaa_teknik/src/features/authentication/views/login_screen.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -52,7 +53,9 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(const SignupScreen());
+                      },
                       child: Text(
                         "REGISTER",
                         style: GoogleFonts.montserrat(

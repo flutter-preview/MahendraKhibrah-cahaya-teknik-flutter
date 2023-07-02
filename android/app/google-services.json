@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "149530220671",
+    "project_id": "cahaya-teknik",
+    "storage_bucket": "cahaya-teknik.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149530220671:android:7a1214832419f3f68ac74a",
+        "android_client_info": {
+          "package_name": "com.example.cahayaa_teknik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149530220671-uoboemqpmrhgn8l49q9g877n46evv6t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBExXf1Zq7kF6lSGplNe9BBDQaQrTKPz7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149530220671-uoboemqpmrhgn8l49q9g877n46evv6t1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "149530220671-9os6de648q7l6746qen3k5ajqagi4vkr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cahayaaTeknik"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

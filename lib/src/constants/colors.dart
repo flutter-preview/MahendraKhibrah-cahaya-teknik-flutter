@@ -5,6 +5,7 @@ const wTangerine = Color(0xFFFFBB1C);
 const wCobalt = Color(0xFF045C94);
 const wDark = Color(0xFF262626);
 const wWhite = Color(0xFFFFFFFF);
+const wGrey = Color(0xFFF2F4F5);
 
 // ------ DARK MODE -------
 const dTangerine = Color(0xFFFCA311);

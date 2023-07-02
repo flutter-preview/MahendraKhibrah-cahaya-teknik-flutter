@@ -1,6 +1,10 @@
 import 'package:cahayaa_teknik/src/constants/colors.dart';
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/forget_password_widget.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/signup_screen.dart';
+import 'package:cahayaa_teknik/src/features/dashboard/views/dasbboard_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,7 +16,7 @@ class LoginScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -36,10 +40,9 @@ class LoginScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 20),
                         child: TextFormField(
                           decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.person),
+                            prefixIcon: Icon(Icons.mail),
                             hintText: 'What is your email?',
                             labelText: 'email *',
-                            border: OutlineInputBorder(),
                           ),
                         ),
                       ),
@@ -50,14 +53,17 @@ class LoginScreen extends StatelessWidget {
                             prefixIcon: Icon(Icons.vpn_key),
                             hintText: 'What is the password?',
                             labelText: 'password *',
-                            border: OutlineInputBorder(),
                           ),
                         ),
                       ),
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.bottomSheet(
+                              const ForgetPasswordWidget(),
+                            );
+                          },
                           child: Text(
                             "forgot password?",
                             style: GoogleFonts.montserrat(
@@ -73,7 +79,9 @@ class LoginScreen extends StatelessWidget {
                         child: SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.offAll(const DashBoardScreen());
+                            },
                             child: Text(
                               "LOGIN",
                               style: GoogleFonts.montserrat(
@@ -121,7 +129,9 @@ class LoginScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.off(const SignupScreen());
+                      },
                       child: Text(
                         "Sign Up",
                         style: GoogleFonts.montserrat(
