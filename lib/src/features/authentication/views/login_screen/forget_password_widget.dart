@@ -1,4 +1,4 @@
-import 'package:cahayaa_teknik/src/features/authentication/views/button_forget_password_widget.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/login_screen/button_forget_password_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cahayaa_teknik/src/constants/colors.dart';
 

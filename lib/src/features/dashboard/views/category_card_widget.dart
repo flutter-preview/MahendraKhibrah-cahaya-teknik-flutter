@@ -1,18 +1,20 @@
 import 'package:cahayaa_teknik/src/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CategoryCardWidget extends StatelessWidget {
-  const CategoryCardWidget({
-    super.key,
-    required this.title,
-  });
+  const CategoryCardWidget(
+      {super.key, required this.title, required this.destination});
 
   final String title;
+  final dynamic destination;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(destination);
+      },
       child: Padding(
         padding: const EdgeInsets.only(right: 10),
         child: Container(

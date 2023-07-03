@@ -2,7 +2,7 @@ import 'package:cahayaa_teknik/src/constants/colors.dart';
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
 import 'package:cahayaa_teknik/src/features/authentication/controllers/on_boarding_screen_controller.dart';
 import 'package:cahayaa_teknik/src/features/authentication/models/on_boarding.dart';
-import 'package:cahayaa_teknik/src/features/authentication/views/on_boarding_screen_widget.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/on_boarding/on_boarding_screen_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

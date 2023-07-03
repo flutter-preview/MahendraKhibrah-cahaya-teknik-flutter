@@ -1,3 +1,4 @@
+import 'package:cahayaa_teknik/packages/local_notification.dart';
 import 'package:cahayaa_teknik/src/features/test/view/fcmScreen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
@@ -25,7 +26,9 @@ class FirebaseApi {
     );
     await _firebaseMessaging.getInitialMessage().then(handleMessage);
     await FirebaseMessaging.onMessageOpenedApp.listen(handleMessage);
-    await FirebaseMessaging.onMessage.listen(handleMessage);
+    await FirebaseMessaging.onMessage.listen((RemoteMessage msg) {
+      LocalNotification.notification(msg);
+    });
     FirebaseMessaging.onBackgroundMessage(handleBackgroundMassage);
   }
 

@@ -1,6 +1,8 @@
+import 'package:cahayaa_teknik/src/common_widget/app_bar_widget.dart';
 import 'package:cahayaa_teknik/src/constants/colors.dart';
 import 'package:cahayaa_teknik/src/features/dashboard/controllers/dashboard.dart';
 import 'package:cahayaa_teknik/src/features/dashboard/views/category_card_widget.dart';
+import 'package:cahayaa_teknik/src/features/product/view/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,41 +13,10 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sizePhone = MediaQuery.of(context).size;
-    DashboardController dashboardC = DashboardController();
+    DashboardController dashboardC = Get.put(DashboardController());
 
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        title: Text(
-          "Cahaya Teknik",
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: DropdownButton(
-                icon: const Icon(
-                  Icons.person_outline_rounded,
-                  color: Colors.black,
-                ),
-                items: const [
-                  DropdownMenuItem(
-                    value: "logout",
-                    child: Text("logout"),
-                  ),
-                ],
-                onChanged: (val) {
-                  dashboardC.logout();
-                }),
-          )
-        ],
-      ),
+      appBar: const AppBarWidget(),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20),
@@ -71,17 +42,22 @@ class DashBoardScreen extends StatelessWidget {
                   children: const [
                     CategoryCardWidget(
                       title: "Pembelian",
+                      destination: ProductScreen(),
                     ),
                     CategoryCardWidget(
+                      destination: ProductScreen(),
                       title: "Penjualan",
                     ),
                     CategoryCardWidget(
+                      destination: ProductScreen(),
                       title: "Persediaan",
                     ),
                     CategoryCardWidget(
+                      destination: ProductScreen(),
                       title: "Invoice",
                     ),
                     CategoryCardWidget(
+                      destination: ProductScreen(),
                       title: "Klien",
                     ),
                   ],

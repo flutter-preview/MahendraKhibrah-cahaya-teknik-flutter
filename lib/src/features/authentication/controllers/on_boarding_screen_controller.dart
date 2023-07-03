@@ -1,4 +1,4 @@
-import 'package:cahayaa_teknik/src/features/authentication/views/welcome_screen.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/welcome_screen/welcome_screen.dart';
 import 'package:get/get.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 

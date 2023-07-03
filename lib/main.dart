@@ -1,8 +1,9 @@
 import 'package:cahayaa_teknik/packages/firebase_api.dart';
+import 'package:cahayaa_teknik/packages/local_notification.dart';
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
 import 'package:cahayaa_teknik/src/features/authentication/controllers/on_boarding_screen_controller.dart';
 import 'package:cahayaa_teknik/src/features/authentication/controllers/splash_screen_controller.dart';
-import 'package:cahayaa_teknik/src/features/authentication/views/splash_screen.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/splash_screen/splash_screen.dart';
 import 'package:cahayaa_teknik/src/utils/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ void main() async {
   );
   FirebaseApi firebaseApi = FirebaseApi();
   await firebaseApi.initNotification();
+  LocalNotification.initialize();
   runApp(MyApp());
 }
 
@@ -24,7 +26,6 @@ class MyApp extends StatelessWidget {
 
   final splashScreenC = Get.lazyPut(() => SplashScreenController());
   final onBoardingScreenC = Get.lazyPut(() => OnBoardingScreenController());
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

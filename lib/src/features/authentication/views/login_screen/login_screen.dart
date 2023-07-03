@@ -1,13 +1,16 @@
 import 'package:cahayaa_teknik/src/constants/colors.dart';
 import 'package:cahayaa_teknik/src/constants/image_string.dart';
-import 'package:cahayaa_teknik/src/features/authentication/views/login_screen.dart';
+import 'package:cahayaa_teknik/src/features/authentication/controllers/login_controller.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/login_screen/forget_password_widget.dart';
+import 'package:cahayaa_teknik/src/features/authentication/views/signup_screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
 
+  final LoginController loginScreenC = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,60 +23,72 @@ class SignupScreen extends StatelessWidget {
               children: [
                 Image(
                   image: const AssetImage(welcomeImage),
-                  height: MediaQuery.of(context).size.height * 0.15,
+                  height: MediaQuery.of(context).size.height * 0.2,
                 ),
                 Text(
-                  "Get On Board!,",
+                  "Welcome Back,",
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 Text(
-                  "daftar sebagai pengguna baru.",
+                  "Silakan masuk menggunakan akun Anda.",
                   style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 20,
                 ),
                 Form(
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.person),
-                            hintText: 'What is your name?',
-                            labelText: 'name *',
+                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        child: Obx(
+                          () => TextFormField(
+                            onChanged: ((value) {
+                              loginScreenC.email.value = value;
+                            }),
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.mail),
+                              hintText: 'What is your email?',
+                              labelText: 'email *',
+                              errorText: loginScreenC.isEmailTrue.value
+                                  ? null
+                                  : "email tidak ditemukan",
+                            ),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.mail),
-                            hintText: 'What is your email?',
-                            labelText: 'email *',
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Obx(
+                          () => TextFormField(
+                            onChanged: ((value) {
+                              loginScreenC.password.value = value;
+                            }),
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.vpn_key),
+                              hintText: 'What is the password?',
+                              labelText: 'password *',
+                              errorText: loginScreenC.isPasswordTrue.value
+                                  ? null
+                                  : "password salah",
+                            ),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.phone),
-                            hintText: 'What is your number?',
-                            labelText: 'phone no *',
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.vpn_key),
-                            hintText: 'What is the password?',
-                            labelText: 'password *',
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Get.bottomSheet(
+                              const ForgetPasswordWidget(),
+                            );
+                          },
+                          child: Text(
+                            "forgot password?",
+                            style: GoogleFonts.montserrat(
+                              color: ltbBlue,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
@@ -82,9 +97,11 @@ class SignupScreen extends StatelessWidget {
                         child: SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              loginScreenC.loginCheck();
+                            },
                             child: Text(
-                              "REGISTER",
+                              "LOGIN",
                               style: GoogleFonts.montserrat(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600,
@@ -92,14 +109,14 @@ class SignupScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 30),
                     child: Text(
                       "OR",
                       style: Theme.of(context).textTheme.titleMedium,
@@ -125,16 +142,16 @@ class SignupScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "already have an account?",
+                      "dont have an account?",
                       style: Theme.of(context).textTheme.titleMedium,
                       textAlign: TextAlign.center,
                     ),
                     TextButton(
                       onPressed: () {
-                        Get.off(const LoginScreen());
+                        Get.off(const SignupScreen());
                       },
                       child: Text(
-                        "Login",
+                        "Sign Up",
                         style: GoogleFonts.montserrat(
                           color: ltbBlue,
                           fontWeight: FontWeight.w600,
